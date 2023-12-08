@@ -5,12 +5,9 @@ from pydub.silence import split_on_silence
 
 
 class STT:
-    def __init(self):
-        self.r = sr.Recognizer()
-
 
     def AudioFile(self, path, language='ru-RU'):
-        r = self.r
+        r = sr.Recognizer()
         with sr.AudioFile(path) as source:
             audio_data = r.record(source)
             text = r.recognize_google(audio_data, language=language)
